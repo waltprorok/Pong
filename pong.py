@@ -1,9 +1,9 @@
 #!usr/bin/env python
 """
-Pong Game Code
-Version 2.0.1
-Coded By: Walter Prorok
-Original Music By: Walter Prorok
+PROGRAM: Pong Game Code
+VERSION: 2.0.1
+AUTHOR: Walter Prorok
+MUSIC COMPOSER: Walter Prorok
 ***Original Source Code URL Below***
 www.mediafire.com/view/igmkm0mt04a/pong+v1.0.py
 """
