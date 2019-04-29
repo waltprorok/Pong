@@ -1,4 +1,8 @@
-#!usr/bin/env python
+#!usr/bin/env python3
+__program__ = "Pong"
+__author__ = 'Walter Prorok'
+__version__ = '2.0'
+
 """
 PROGRAM: Pong Game Code
 VERSION: 2.0.1
@@ -11,13 +15,11 @@ www.mediafire.com/view/igmkm0mt04a/pong+v1.0.py
 import pygame
 from pygame.locals import *
 from sys import exit
-import random
 import time
 import sys
-import os
 
 pygame.init()
-pygame.joystick.init()
+#pygame.joystick.init()
 
 screen = pygame.display.set_mode((640, 480), 0, 32)
 pygame.display.set_caption("Pong Game")
@@ -33,7 +35,7 @@ bar1.fill((0, 0, 255))
 bar2 = bar.convert()
 bar2.fill((255, 0, 0))
 circ_sur = pygame.Surface((15, 15))
-circ = pygame.draw.circle(circ_sur, (0, 255, 0), (15 / 2, 15 / 2), 15 / 2)
+circ = pygame.draw.circle(circ_sur, (0, 255, 0), (15 // 2, 15 // 2), 15 // 2)
 circle = circ_sur.convert()
 circle.set_colorkey((0, 0, 0))
 
@@ -75,7 +77,7 @@ pygame.event.poll()
 def gameover1():
     screen.blit(background, (0, 0))
     frame = pygame.draw.rect(screen, (255, 255, 255), Rect((5, 5), (630, 470)), 2)
-    text = font.render("YOU WON!!!       Game Over", True, (0, 0, 0))
+    text = font.render("YOU WON!!!\t\tGame Over", True, (0, 0, 0))
     text1 = text.get_rect()
     text1.center = (320, 40)
     background.blit(text, text1)
@@ -85,16 +87,13 @@ def gameover1():
 def gameover2():
     screen.blit(background, (0, 0))
     frame = pygame.draw.rect(screen, (255, 255, 255), Rect((5, 5), (630, 470)), 2)
-    text = font.render("Robot Won :(      Game Over", True, (0, 0, 0))
+    text = font.render("Robot Won :(\t\tGame Over", True, (0, 0, 0))
     text1 = text.get_rect()
     text1.center = (320, 440)
     background.blit(text, text1)
     done()
 
 
-#	playagin()
-
-# Pause Defined
 def done():
     screen.blit(background, (0, 0))
     frame = pygame.draw.rect(screen, (255, 255, 255), Rect((5, 5), (630, 470)), 2)
@@ -106,14 +105,6 @@ def done():
     clock.tick(0)
 
 
-#	playagain()
-
-# !!!!!!!!!!!!!!!!!!!  WORK ON THIS CODE  !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-# def playagain():
-#	pygame.init()
-
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 while True:
 
     for event in pygame.event.get():
@@ -140,11 +131,9 @@ while True:
                 if event.key == K_SPACE:
                     pause = False
 
-        if event.type == KEYUP:
-            if event.key == K_RETURN:
-                if event.key == K_RETURN:
-                    # pygame.init()
-                    playagain()
+        # if event.type == KEYUP:
+        #     if event.key == K_RETURN:
+        #         if event.key == K_RETURN:
 
     while pause == False:
         for event in pygame.event.get():
