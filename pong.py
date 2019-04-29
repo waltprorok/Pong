@@ -4,10 +4,6 @@ __author__ = 'Walter Prorok'
 __version__ = '2.0'
 
 """
-PROGRAM: Pong Game Code
-VERSION: 2.0.1
-AUTHOR: Walter Prorok
-MUSIC COMPOSER: Walter Prorok
 ***Original Source Code URL Below***
 www.mediafire.com/view/igmkm0mt04a/pong+v1.0.py
 """
@@ -19,7 +15,6 @@ import time
 import sys
 
 pygame.init()
-#pygame.joystick.init()
 
 screen = pygame.display.set_mode((640, 480), 0, 32)
 pygame.display.set_caption("Pong Game")
@@ -70,24 +65,21 @@ pygame.mixer.music.get_busy()
 pygame.event.poll()
 
 
-# clock.tick(10)
-
-
 # Game Over Screen Blit and winner
-def gameover1():
+def game_over1():
     screen.blit(background, (0, 0))
     frame = pygame.draw.rect(screen, (255, 255, 255), Rect((5, 5), (630, 470)), 2)
-    text = font.render("YOU WON!!!\t\tGame Over", True, (0, 0, 0))
+    text = font.render("YOU WON!!! Game Over", True, (0, 0, 0))
     text1 = text.get_rect()
     text1.center = (320, 40)
     background.blit(text, text1)
     done()
 
 
-def gameover2():
+def game_over2():
     screen.blit(background, (0, 0))
     frame = pygame.draw.rect(screen, (255, 255, 255), Rect((5, 5), (630, 470)), 2)
-    text = font.render("Robot Won :(\t\tGame Over", True, (0, 0, 0))
+    text = font.render("Robot Won :( Game Over", True, (0, 0, 0))
     text1 = text.get_rect()
     text1.center = (320, 440)
     background.blit(text, text1)
@@ -147,10 +139,10 @@ while True:
     score2 = font.render(str(bar2_score), True, (255, 255, 255))
 
     # Who is the Winner
-    if bar1_score == 5:
-        gameover1()
-    if bar2_score == 5:
-        gameover2()
+    if bar1_score == 1:
+        game_over1()
+    if bar2_score == 1:
+        game_over2()
 
     screen.blit(background, (0, 0))
     frame = pygame.draw.rect(screen, (255, 255, 255), Rect((5, 5), (630, 470)), 2)
