@@ -6,7 +6,8 @@ PROGRAM: Pong
 
 ORIGINAL MUSIC BY: Walter Prorok
 
-DESCRIPTION: Pong video game written in Python 2.7 with PyGames.  Standard Pong Game.  Only one player vs the computer.
+DESCRIPTION: Pong video game written in Python 3 with PyGames.  
+Standard Pong Game.  Only one player vs the computer.
 
 FEATURES: Space Bar to Pause.  Splash screen to start. 
 
